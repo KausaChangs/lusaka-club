@@ -4,6 +4,7 @@ import {
   JoinColumn,
   OneToOne,
   PrimaryGeneratedColumn,
+  OneToMany,
 } from 'typeorm';
 import { Facility } from './facility';
 
@@ -24,7 +25,10 @@ export class Section {
   })
   description: string;
 
-  @OneToOne(() => Facility) //changes requested: one to many
-  @JoinColumn()
-  facility: Facility;
+  // @OneToOne(() => Facility) //changes requested: one to many
+  // @JoinColumn()
+  // facility: Facility;
+
+  @OneToMany(() => Facility, (facility) => facility.section)
+  faclitities: Facility[];
 }

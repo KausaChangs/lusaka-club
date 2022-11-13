@@ -63,10 +63,10 @@ export class SectionService {
       createSectionFaciltyDetails,
     );
 
-    const savedFacility = await this.facilityRepository.save(newFacility);
+    // const savedFacility = await this.facilityRepository.save(newFacility);
 
-    section.facility = savedFacility;
+    // section.faclitities = savedFacility;
 
-    return this.sectionRepository.save(section);
+    // return this.sectionRepository.save(section);
   }
 }
